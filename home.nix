@@ -59,4 +59,15 @@
     yazi               # Yazi terminal emulator
     starship          # Cross-shell prompt
   ];
+
+  programs.git = {
+    enable = true;
+    userName = "Luibi";  # Replace with your name
+    userEmail = "luferbrito96@gmail.com";  # Replace with your email
+    extraConfig = {
+      init.defaultBranch = "main";  # Default branch name
+      pull.rebase = true;  # Rebase instead of merge on pull
+      push.autoSetupRemote = true;  # Automatically set remote branch
+    };
+  };
 }

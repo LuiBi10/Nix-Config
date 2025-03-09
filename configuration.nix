@@ -123,7 +123,6 @@
     light             # Alternative brightness control
     wl-clipboard      # Wayland clipboard manager
     xclip             # Clipboard tool for X11
-    cliphist          # Clipboard history manager
     hyprpolkitagent   # Polkit agent for Hyprland
     marksman          # Bookmark manager for the terminal
 
@@ -133,8 +132,8 @@
     playerctl         # Media player controller
 
     # --- GUI Applications & Desktop Enhancements ---
-    firefox          # Web browser
     kdePackages.qtsvg # Qt SVG library
+    kdePackages.plasma-workspace
     # libsForQt5.qt5ct # Qt5 Configuration Tool
     # libsForQt5.qtstyleplugin-kvantum # Kvantum theme engine
     # xdg-desktop-portal-gtk   # Desktop portal for GTK apps
@@ -179,4 +178,9 @@
         TAP: KEY_ESC
         HOLD: KEY_LEFTCTRL
   '';
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
 }
