@@ -37,7 +37,7 @@
   services.displayManager.sddm.enable = true; # Use SDDM as the display manager
   services.displayManager.sddm.wayland.enable = true; # Enable Wayland support in SDDM
   services.desktopManager.plasma6.enable = true; # Enable KDE Plasma 6 desktop environment
-
+  programs.thunar.enable = true;
   # Keyboard layout settings
   services.xserver.xkb = {
     layout = "us"; # Set the keyboard layout to US
@@ -125,6 +125,7 @@
     xclip             # Clipboard tool for X11
     hyprpolkitagent   # Polkit agent for Hyprland
     marksman          # Bookmark manager for the terminal
+    home-manager      # Dotfile manager for NixOS       
 
     # --- Audio & Multimedia ---
     pavucontrol       # PulseAudio volume control
@@ -134,8 +135,6 @@
     # --- GUI Applications & Desktop Enhancements ---
     kdePackages.qtsvg # Qt SVG library
     kdePackages.plasma-workspace
-    # libsForQt5.qt5ct # Qt5 Configuration Tool
-    # libsForQt5.qtstyleplugin-kvantum # Kvantum theme engine
     # xdg-desktop-portal-gtk   # Desktop portal for GTK apps
     #
     # --- Hyprland & Wayland Setup ---
@@ -178,9 +177,4 @@
         TAP: KEY_ESC
         HOLD: KEY_LEFTCTRL
   '';
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
 }

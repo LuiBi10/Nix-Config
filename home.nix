@@ -8,10 +8,9 @@
 
   # Import additional configuration files if needed
   imports = [
-
+  ./modules/hyprland.nix
   ];
-
-  
+ 
   # Packages to be installed for the user
   home.packages = with pkgs; [
     
