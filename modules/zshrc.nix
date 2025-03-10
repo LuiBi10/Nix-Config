@@ -12,13 +12,34 @@ in
     enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = plugins;
+      plugins = plugins;  # Only standard Oh My Zsh plugins here
       theme = "robbyrussell"; # Not used since Starship handles the prompt
     };
 
+    # Enable autosuggestions and syntax highlighting
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
+
+    # Aliases
+    shellAliases = {
+      hyp         = "sudo -E nvim /etc/nixos/modules/hyprland.nix";
+      zh          = "nvim -E /etc/nixos/modules/zshrc.nix";
+      way         = "nvim ~/.config/waybar/config.jsonc";
+      wallconfig  = "nvim ~/.config/hypr/hyprpaper.conf";
+      home        = "sudo -E nvim /etc/nixos/home.nix";
+      flake       = "sudo -E nvim /etc/nixos/flake.nix";
+      conf        = "sudo -E nvim /etc/nixos/configuration.nix";
+      garbage     = "sudo nix-collect-garbage -d";
+      build       = "sudo nixos-rebuild switch";
+      cat         = "bat --theme=base16";
+      ls          = "eza --icons=always --color=always -a";
+      ll          = "eza --icons=always --color=always -la";
+      change      = "hyprctl dispatch exit";
+      reload      = "source ~/.zshrc && echo 'Reloaded ~/.zshrc'";
+      shut        = "sudo shutdown now";
+      y           = "yazi";
+    };
 
     initExtra = ''
       # Environment Variables
@@ -67,5 +88,5 @@ in
       krabby name charizard -s
     '';
   };
-
 }
+

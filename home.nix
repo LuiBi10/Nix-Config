@@ -9,6 +9,7 @@
   # Import additional configuration files if needed
   imports = [
   ./modules/hyprland.nix
+  ./modules/zshrc.nix
   ];
  
   # Packages to be installed for the user
@@ -51,6 +52,8 @@
     btop                # Resource monitor for terminal
     cava              # A simple and fast terminal-based audio player
     cmatrix             # Terminal-based matrix screensaver
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 
     
     # Terminal Emulators
