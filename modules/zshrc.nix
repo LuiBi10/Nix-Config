@@ -3,8 +3,6 @@
 let
   plugins = [
     "git"
-    "zsh-autosuggestions"
-    "zsh-syntax-highlighting"
     "colored-man-pages"
     "command-not-found"
   ];
