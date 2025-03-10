@@ -12,7 +12,7 @@ in
 {
   programs.zsh = {
     enable = true;
-    ohMyZsh = {
+    oh-my-zsh = {
       enable = true;
       plugins = plugins;
       theme = "robbyrussell"; # Not used since Starship handles the prompt
