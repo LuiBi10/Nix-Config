@@ -166,12 +166,10 @@ in
         disabled = false;
         format = "[${symbol}${pyenv_prefix}(${version})( \\($virtualenv\\))](fg:#FF9E3B)($style)";
         symbol = " ";
-        version_format = "${raw}";
       };
 
       java = {
         format = "[[ $symbol ($version) ](fg:#FF5D62)]($style)";
-        version_format = "${raw}";
         symbol = " ";
         disabled = false;
       };
@@ -179,18 +177,15 @@ in
       c = {
         format = "[[ $symbol ($version) ](fg:#7FB4CA)]($style)";
         symbol = " ";
-        version_format = "${raw}";
         disabled = false;
       };
 
       zig = {
         format = "[[ $symbol ($version) ](fg:#FFA066)]($style)";
-        version_format = "${raw}";
         disabled = false;
       };
 
       bun = {
-        version_format = "${raw}";
         format = "[[ $symbol ($version) ](fg:#DCD7BA)]($style)";
         disabled = false;
       };
