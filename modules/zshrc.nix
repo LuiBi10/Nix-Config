@@ -13,7 +13,7 @@ in
     oh-my-zsh = {
       enable = true;
       plugins = plugins;  # Only standard Oh My Zsh plugins here
-      theme = "robbyrussell"; # Not used since Starship handles the prompt
+      theme = "";  # Disable Oh My Zsh theme to let Starship control the prompt
     };
 
     # Enable autosuggestions and syntax highlighting
@@ -24,7 +24,7 @@ in
     # Aliases
     shellAliases = {
       hyp         = "sudo -E nvim /etc/nixos/modules/hyprland.nix";
-      zh          = "nvim -E /etc/nixos/modules/zshrc.nix";
+      zh          = "sudo nvim -E /etc/nixos/modules/zshrc.nix";
       way         = "nvim ~/.config/waybar/config.jsonc";
       wallconfig  = "nvim ~/.config/hypr/hyprpaper.conf";
       home        = "sudo -E nvim /etc/nixos/home.nix";
@@ -41,6 +41,7 @@ in
       y           = "yazi";
     };
 
+    # Starship prompt
     initExtra = ''
       # Environment Variables
       export VISUAL="nvim"
@@ -86,6 +87,9 @@ in
 
       # Krabby
       krabby name charizard -s
+
+      # Starship Prompt
+      eval "$(starship init zsh)"
     '';
   };
 }

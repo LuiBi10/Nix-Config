@@ -8,6 +8,10 @@
 
   # Enable experimental Nix features for flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
+  # Active virtualization virtualbox
+   virtualisation.virtualbox.host.enable = true;
+   users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
 
   # Bootloader settings for system initialization
   boot.loader.systemd-boot.enable = true;
@@ -17,7 +21,7 @@
   networking.hostName = "nixos"; # Set the system hostname
   networking.networkmanager.enable = true; # Enable NetworkManager for managing connections
 
-# Timezone and localization settings
+  # Timezone and localization settings
   time.timeZone = "America/Bogota"; # Set the timezone to Colombia
   i18n.defaultLocale = "en_US.UTF-8"; # Default locale in English
   i18n.extraLocaleSettings = {
@@ -90,6 +94,21 @@
     pkgs.nerd-fonts.iosevka
   ];
 
+  # Activate the OpenSSH service
+  services.openssh = {
+  enable = true;
+  ports = [ 22 ];
+  settings = {
+    PasswordAuthentication = true;
+    AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
+    UseDns = true;
+    X11Forwarding = false;
+    PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+   };
+  };
+  
+  networking.firewall.allowedTCPPorts = [ 22 ];
+  
   # System packages
   environment.systemPackages = with pkgs; [
 
@@ -135,8 +154,9 @@
     # --- GUI Applications & Desktop Enhancements ---
     kdePackages.qtsvg # Qt SVG library
     kdePackages.plasma-workspace
-    # xdg-desktop-portal-gtk   # Desktop portal for GTK apps
-    #
+    xdg-desktop-portal-gtk   # Desktop portal for GTK apps
+    xdg-desktop-portal-hyprland # Desktop portal for Hyprland
+
     # --- Hyprland & Wayland Setup ---
     hyprland         # Hyprland Wayland compositor
     waybar           # Status bar for Wayland
@@ -154,6 +174,10 @@
   # Bluetooth settings
   hardware.bluetooth.enable = true; # Enable Bluetooth
   hardware.bluetooth.powerOnBoot = true; # Power on Bluetooth at boot
+
+   # Enable XDG portal services
+   environment.etc."xdg/menus/applications.menu".source = 
+  "/run/current-system/sw/etc/xdg/menus/plasma-applications.menu";
 
   # Interception Tools for dual-function keys
   services.interception-tools = {

@@ -14,7 +14,7 @@
       env = [
         "QT_QPA_PLATFORM,wayland"
         "QT_QPA_PLATFORMTHEME,qt5ct"
-        "QT_STYLE_OVERRIDE,kvantum"
+        "QT_STYLE_OVERRIDE,qtc6t"
       ];
 
       # Programs
