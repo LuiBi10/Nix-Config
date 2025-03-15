@@ -24,7 +24,7 @@ in
     # Aliases
     shellAliases = {
       hyp         = "sudo -E nvim /etc/nixos/modules/hyprland.nix";
-      zh          = "sudo nvim -E /etc/nixos/modules/zshrc.nix";
+      zh         = "sudo -E nvim /etc/nixos/modules/zshrc.nix";
       way         = "nvim ~/.config/waybar/config.jsonc";
       wallconfig  = "nvim ~/.config/hypr/hyprpaper.conf";
       home        = "sudo -E nvim /etc/nixos/home.nix";
@@ -86,7 +86,7 @@ in
       fi
 
       # Krabby
-      krabby name charizard -s
+     # krabby name charizard -s
 
       # Starship Prompt
       eval "$(starship init zsh)"

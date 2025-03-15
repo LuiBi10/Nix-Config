@@ -121,6 +121,9 @@
     nodejs_22         # Node.js JavaScript runtime
     cargo             # Rust package manager
     python312Packages.ninja # Ninja build system
+    python312Packages.jupyterlab # JupyterLab notebook
+    python312Packages.debugpy # Python debugger
+    lazygit           # Git terminal UI
 
     # --- Command-Line Utilities ---
     fzf               # Fuzzy finder for the terminal
