@@ -166,7 +166,7 @@
         "SUPER, B, exec, zen-twilight"
         "SUPER, D, exec, discord"
         "SUPER, M, exec, EDITOR=nvim $terminal -e ncspot"
-        "SUPER, O, exec, obsidian"
+        "SUPER, O, exec,  obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland"
 
         # Workspace management
         "SUPER CTRL, S, movetoworkspace, special"

@@ -78,7 +78,7 @@ in
 
       # Startup utilities
       eval "$(zoxide init zsh)"
-      eval "$(zellij setup --generate-auto-start zsh)"
+      # eval "$(zellij setup --generate-auto-start zsh)"
 
       # Atuin
       if command -v atuin &> /dev/null; then
@@ -86,10 +86,17 @@ in
       fi
 
       # Krabby
-     # krabby name charizard -s
+      krabby name charmander
+      fastfetch
 
       # Starship Prompt
       eval "$(starship init zsh)"
+
+      # Iniciar tmux automáticamente si no está en una sesión de tmux
+        if command -v tmux &> /dev/null; then
+            [ -z "$TMUX" ] && exec tmux
+        fi
+
     '';
   };
 }

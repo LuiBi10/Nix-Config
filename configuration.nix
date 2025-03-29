@@ -12,6 +12,7 @@
   # Active virtualization virtualbox
    virtualisation.virtualbox.host.enable = true;
    users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
+   virtualisation.docker.enable = true;
 
   # Bootloader settings for system initialization
   boot.loader.systemd-boot.enable = true;
@@ -63,7 +64,7 @@
   users.users.luibi = {
     isNormalUser = true; # Define as a regular user
     description = "luibi"; # User description
-    extraGroups = [ "networkmanager" "wheel" ]; # Add to network and wheel groups
+    extraGroups = [ "networkmanager" "wheel" "docker" ]; # Add to network and wheel groups
     packages = with pkgs; [];
   };
 
@@ -124,6 +125,7 @@
     python312Packages.jupyterlab # JupyterLab notebook
     python312Packages.debugpy # Python debugger
     lazygit           # Git terminal UI
+    lua-language-server
 
     # --- Command-Line Utilities ---
     fzf               # Fuzzy finder for the terminal
@@ -167,8 +169,8 @@
     rofi-wayland     # Rofi launcher for Wayland
     hyprshot         # Screenshot tool for Wayland
 
-    # --- Containers & Virtualization ---
-    docker           # Container runtime
+    # # --- Containers & Virtualization ---
+    # docker           # Container runtime
     ];
 
   # System state version
