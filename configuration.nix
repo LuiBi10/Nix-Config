@@ -39,7 +39,7 @@
 
   # X server and desktop environment settings
   services.xserver.enable = true; # Enable the X server
-  services.displayManager.sddm.enable = true; # Use SDDM as the display manager
+  services.displayManager.sddm.enable = true; # Use SDDM as the display manager 
   services.displayManager.sddm.wayland.enable = true; # Enable Wayland support in SDDM
   services.desktopManager.plasma6.enable = true; # Enable KDE Plasma 6 desktop environment
   programs.thunar.enable = true;
@@ -150,6 +150,14 @@
     hyprpolkitagent   # Polkit agent for Hyprland
     marksman          # Bookmark manager for the terminal
     home-manager      # Dotfile manager for NixOS       
+    lua-language-server # Lua language server
+    imagemagick          # Convert images
+    tectonic             # Para renderizar expresiones LaTeX
+    mermaid-cli          # Para diagramas Mermaid
+    fd                   # Alternativa mejorada a 'find'
+    sqlite               # Para almacenamiento de frecency e historial
+    ghostscript          # Render PDF files
+    stylua               # Linter para Lua
 
     # --- Audio & Multimedia ---
     pavucontrol       # PulseAudio volume control

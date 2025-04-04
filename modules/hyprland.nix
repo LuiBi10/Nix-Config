@@ -137,6 +137,7 @@
         "float,title:^(Save File)$"
         "opacity 0.95,class:^(thunar)$"
         "opacity 0.85,title:^(discord)$"
+        "workspace 3, class:^(obsidian)$"
         "workspace 3, class:^(org.kde.dolphin)$"
         "workspace 2, class:^(Google-chrome)$"
         "workspace 2, class:^(zen-twilight)$"
