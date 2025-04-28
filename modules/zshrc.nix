@@ -86,7 +86,7 @@ in
       fi
 
       # Krabby
-      krabby name charmander
+      krabby name bulbasaur -s
       fastfetch
 
       # Starship Prompt

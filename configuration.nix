@@ -42,7 +42,6 @@
   services.displayManager.sddm.enable = true; # Use SDDM as the display manager 
   services.displayManager.sddm.wayland.enable = true; # Enable Wayland support in SDDM
   services.desktopManager.plasma6.enable = true; # Enable KDE Plasma 6 desktop environment
-  programs.thunar.enable = true;
   # Keyboard layout settings
   services.xserver.xkb = {
     layout = "us"; # Set the keyboard layout to US
@@ -59,6 +58,11 @@
     alsa.support32Bit = true; # Enable 32-bit ALSA support
     pulse.enable = true; # Enable PulseAudio compatibility
   };
+
+  # services.plex = {
+  #   enable = true;
+  #   openFirewall = true;
+  # };
 
   # User configuration for the system
   users.users.luibi = {
@@ -154,10 +158,10 @@
     imagemagick          # Convert images
     tectonic             # Para renderizar expresiones LaTeX
     mermaid-cli          # Para diagramas Mermaid
-    fd                   # Alternativa mejorada a 'find'
     sqlite               # Para almacenamiento de frecency e historial
     ghostscript          # Render PDF files
     stylua               # Linter para Lua
+    nwg-look            # GTK theme configurator
 
     # --- Audio & Multimedia ---
     pavucontrol       # PulseAudio volume control

@@ -15,6 +15,9 @@
         "QT_QPA_PLATFORM,wayland"
         "QT_QPA_PLATFORMTHEME,qt5ct"
         "QT_STYLE_OVERRIDE,qtc6t"
+        "XCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,24"
+        "HYPRCURSOR_THEME, Qogir Cursors"
       ];
 
       # Programs
@@ -46,8 +49,8 @@
       # Decoration settings
       decoration = {
         rounding = 12;
-        active_opacity = 0.95;
-        inactive_opacity = 0.90;
+        active_opacity = 0.80;
+        inactive_opacity = 0.87;
 
         blur = {
           enabled = true;
@@ -135,13 +138,16 @@
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
         "float,title:^(Save File)$"
-        "opacity 0.95,class:^(thunar)$"
         "opacity 0.85,title:^(discord)$"
         "workspace 3, class:^(obsidian)$"
         "workspace 3, class:^(org.kde.dolphin)$"
         "workspace 2, class:^(Google-chrome)$"
         "workspace 2, class:^(zen-twilight)$"
-      ];
+        "opacity 0.90 0.90,class:^(zen-twilight)$"
+        "opacity 1.0 override, class:^(zen-twilight)$, title:^(.*Netflix.*)$"
+        "opacity 1.0 override, class:^(zen-twilight)$, title:^(.*Video.*)$"
+        "opacity 1.0 override, class:^(zen-twilight)$, title:^Picture-in-Picture$"
+       ];
 
       # Key bindings
       "$mainMod" = "SUPER";
@@ -158,7 +164,7 @@
         "$mainMod, Return, exec, $terminal"
         "$mainMod CTRL, Return, exec, [float] $terminal"
         "SUPER_SHIFT, B, exec, $terminal -e btop"
-        "SUPER_CTRL, Space, exec, ~/.config/rofi/launchers/type-2/launcher.sh"
+        "SUPER_CTRL, Space, exec, rofi -show drun -disable-history"
         "SUPER_SHIFT, F, exec, XDG_CURRENT_DESKTOP=KDE dolphin"
         "SUPER_SHIFT, K, exec, XDG_CURRENT_DESKTOP=KDE kate"
         "SUPER, R, exec, EDITOR=nvim $terminal -e yazi"
